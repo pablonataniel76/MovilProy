@@ -1,0 +1,15 @@
+<ion-menu side="start" menuId="first" contentId="main">
+  <ion-header>
+    <ion-toolbar color="medium">
+      <ion-title>Empresa Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-button *ngFor="let c of components" [routerLink]="'/empresa/'+c.redirectTo"  detail>
+        <ion-icon slot="start" [name]="c.icon"></ion-icon>
+        <ion-label>{{c.name}}</ion-label>
+      </ion-button>
+    </ion-list>
+  </ion-content>
+</ion-menu>

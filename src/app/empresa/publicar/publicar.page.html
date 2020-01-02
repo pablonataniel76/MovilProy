@@ -1,0 +1,188 @@
+<app-header titulo="Publicar Anuncio de Empleo"></app-header>
+
+<ion-content>
+    <form [formGroup]="registerForm" ><!--registerForm.value = userData-->
+    <!-- ion-item -> para que renderize lo que tengamos dentro, como si fuera un item de una lista -->
+    <!-- -------------------------------------Campo para el nombre-------------------------------------- -->
+    <ion-item>
+      <ion-label>Nombre:</ion-label>
+      <ion-input formControlName="nombre"></ion-input>
+    </ion-item>
+    <div class="validation-error">
+      <ng-container *ngFor="let validation of validation_messages.nombre">
+        <div *ngIf="registerForm.get('nombre').hasError(validation.type) && 
+                    (registerForm.get('nombre').dirty ||
+                    registerForm.get('nombre').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    {{ errorMessage }}
+    <!-- -------------------------------------Campo para el nombre-------------------------------------- -->
+    <!-- -------------------------------------Campo para el apellido------------------------------------ -->
+    <ion-item>
+      <ion-label>Apellido:</ion-label>
+      <ion-input formControlName="apellido"></ion-input>
+    </ion-item>
+    <div class="validation-error">
+      <ng-container *ngFor="let validation of validation_messages.apellido">
+        <div *ngIf="registerForm.get('apellido').hasError(validation.type) && 
+                    (registerForm.get('apellido').dirty ||
+                    registerForm.get('apellido').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    {{ errorMessage }}
+    <!-- -------------------------------------Campo para el apellido------------------------------------ -->
+    <!-- -------------------------------------Campo para el email--------------------------------------- -->
+    <ion-item>
+      <ion-label>Email:</ion-label>
+      <ion-input formControlName="email"></ion-input>
+    </ion-item>
+    <div class="validation-error">
+      <ng-container *ngFor="let validation of validation_messages.email">
+        <div *ngIf="registerForm.get('email').hasError(validation.type) && 
+                    (registerForm.get('email').dirty ||
+                    registerForm.get('email').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    {{ errorMessage }}
+    <!-- -------------------------------------Campo para el email--------------------------------------- -->
+    <!-- -------------------------------------Campo para el password------------------------------------ -->
+    <ion-item>
+      <ion-label>Password:</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <div class="validator-error">
+      <ng-container *ngFor="let validation of validation_messages.password">
+        <div *ngIf="registerForm.get('password').hasError(validation.type) && 
+                    (registerForm.get('password').dirty ||
+                    registerForm.get('password').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    {{ errorMessage }}
+
+    <ion-item>
+        <ion-label>Cargo:</ion-label>
+        <ion-input formControlName="cargo"></ion-input>
+      </ion-item>
+      <div class="validation-error">
+        <ng-container *ngFor="let validation of validation_messages.cargo">
+          <div *ngIf="registerForm.get('cargo').hasError(validation.type) && 
+                      (registerForm.get('cargo').dirty ||
+                      registerForm.get('cargo').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+      {{ errorMessage }}
+      <!-- -------------------------------------Campo para el nombre-------------------------------------- -->
+      <!-- -------------------------------------Campo para el apellido------------------------------------ -->
+      <ion-item>
+        <ion-label>Categoria:</ion-label>
+        <ion-select formControlName="categoria" value="brown" okText="Okay" cancelText="Dismiss">
+            <ion-select-option value="brown">Cat1</ion-select-option>
+            <ion-select-option value="blonde">Cat1</ion-select-option>
+            <ion-select-option value="black">Cat1</ion-select-option>
+            <ion-select-option value="red">Cat1</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div class="validation-error">
+        <ng-container *ngFor="let validation of validation_messages.categoria">
+          <div *ngIf="registerForm.get('categoria').hasError(validation.type) && 
+                      (registerForm.get('categoria').dirty ||
+                      registerForm.get('categoria').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+      {{ errorMessage }}
+      <!-- -------------------------------------Campo para el apellido------------------------------------ -->
+      <!-- -------------------------------------Campo para el email--------------------------------------- -->
+      <ion-item>
+        <ion-label>Tipo de Contrato:</ion-label>
+        <ion-input formControlName="contrato"></ion-input>
+      </ion-item>
+      <div class="validation-error">
+        <ng-container *ngFor="let validation of validation_messages.contrato">
+          <div *ngIf="registerForm.get('contrato').hasError(validation.type) && 
+                      (registerForm.get('contrato').dirty ||
+                      registerForm.get('contrato').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+      {{ errorMessage }}
+      <!-- -------------------------------------Campo para el email--------------------------------------- -->
+      <!-- -------------------------------------Campo para el password------------------------------------ -->
+      <ion-item>
+        <ion-label>Descripcion:</ion-label>
+        <ion-input type="password" formControlName="descripcion"></ion-input>
+      </ion-item>
+      <div class="validator-error">
+        <ng-container *ngFor="let validation of validation_messages.descripcion">
+          <div *ngIf="registerForm.get('descripcion').hasError(validation.type) && 
+                      (registerForm.get('descripcion').dirty ||
+                      registerForm.get('descripcion').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+      {{ errorMessage }}
+
+      <ion-item>
+        <ion-label>Sueldo:</ion-label>
+        <ion-input formControlName="sueldo"></ion-input>
+      </ion-item>
+      <div class="validation-error">
+        <ng-container *ngFor="let validation of validation_messages.sueldo">
+          <div *ngIf="registerForm.get('sueldo').hasError(validation.type) && 
+                      (registerForm.get('sueldo').dirty ||
+                      registerForm.get('sueldo').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+      {{ errorMessage }}
+      <!-- -------------------------------------Campo para el nombre-------------------------------------- -->
+      <!-- -------------------------------------Campo para el apellido------------------------------------ -->
+      <ion-item>
+        <ion-label>Tipo de Sueldo:</ion-label>
+        <ion-input formControlName="tiposueldo"></ion-input>
+      </ion-item>
+      <div class="validation-error">
+        <ng-container *ngFor="let validation of validation_messages.tiposueldo">
+          <div *ngIf="registerForm.get('tiposueldo').hasError(validation.type) && 
+                      (registerForm.get('tiposueldo').dirty ||
+                      registerForm.get('tiposueldo').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+      {{ errorMessage }}
+      <!-- -------------------------------------Campo para el apellido------------------------------------ -->
+      <!-- -------------------------------------Campo para el email--------------------------------------- -->
+      <ion-item>
+        <ion-label>Ciudad:</ion-label>
+        <ion-input formControlName="ciudad"></ion-input>
+      </ion-item>
+      <div class="validation-error">
+        <ng-container *ngFor="let validation of validation_messages.ciudad">
+          <div *ngIf="registerForm.get('ciudad').hasError(validation.type) && 
+                      (registerForm.get('ciudad').dirty ||
+                      registerForm.get('ciudad').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+      {{ errorMessage }}
+      
+    <!-- -------------------------------------Campo para el password------------------------------------ -->
+      <ion-button expand="full" shape="round" color="success" [disabled]="!registerForm.valid" type="submit">Registrar!</ion-button>
+  </form>
+</ion-content>
